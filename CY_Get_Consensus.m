@@ -1,8 +1,8 @@
 % Get_Consensus
-function [consensus,F,T] = CY_Get_Consensus(mic_data)
+function [Gconsensus,F,T] = CY_Get_Consensus(mic_data)
 
 
-	[consensus f t]=acontour(mic_data{1},48000);
+	[consensus F T]=acontour(mic_data{1},48000);
 	% compute sdi, relevant quantities, store
 
 	ntrials=size(mic_data,2);
@@ -15,8 +15,9 @@ function [consensus,F,T] = CY_Get_Consensus(mic_data)
 		[consensus(:,:,j)]=acontour(mic_data{j},48000);
 	end
 
-% 	Gconsensus{DAY}=consensus;
+Gconsensus{1}=consensus;
 %     T{DAY} = t;
 %     F{DAY} = f;
-clear consensus;
+
 end
+
