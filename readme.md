@@ -1,7 +1,6 @@
 #ZF sleep Project
 ============
 
-##Overview
 The ZF_sleep project aims to see how song is disrupted during the acclimation to a blue light flashing at night, done in an effort to acclimate Zebra Finches to head mounted microscopes for nighttime imaging.
 
 This repo is an internal guide to running the code and procedures for this experiment.
@@ -14,7 +13,9 @@ This repo is an internal guide to running the code and procedures for this exper
 The following repos are used for song clustering and Spectral Density Images ( also on Glab website)
 
 The [Z]ebra [F]inch [T]ime [F]requency [T]ool[b]ox   https://github.com/jmarkow/zftftb
+
 RoboFinch https://github.com/jmarkow/robofinch
+
 MarkowLab https://github.com/jmarkow/markolab
 
 
