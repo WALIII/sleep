@@ -50,7 +50,9 @@ This will read a ever-increasing .log file, which has the output of the matlab s
 The data will be pulled and chunked, automatically, as follows:
 
 DATA-> BIRD-> DATE-> chop_data-> mat-> ...
+
                              \
+                             
                                -> gif->
 ### Manual Song clustering.
 
