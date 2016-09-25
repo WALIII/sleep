@@ -60,7 +60,7 @@ DATA-> BIRD-> DATE-> chop_data-> mat-> ...
 
 in the mat folder, run, in MATLAB:
 ```
-zftftb_song_clust
+>> zftftb_song_clust
 ```
 Follow the great tutorial on how to use this, listed here: https://github.com/jmarkow/zftftb/blob/master/docs/usage.rst
 
@@ -71,20 +71,20 @@ This needs to be done every day, for every bird, using the SAME TEMPLATE as used
 Once the data is aligned, you can make spectral density images- first go to the directory with all the .wav files, and run:
 
 ```
-WAVS = CY_Get_wav;
+>> WAVS = CY_Get_wav;
 ```
 
 then, to get the auditory contours, run:
 
 ```
-[consensus,F,T] = CY_Get_Consensus(WAVS);
+>> [consensus,F,T] = CY_Get_Consensus(WAVS);
 ```
 
 To plot the SDI, which is the average of the contour representation of song, run:
 
 ```
-G = mean(consensus{1},3)
-figure(); image(flipdim(G,1)); ylim([700, 1000]);
+>> G = mean(consensus{1},3)
+>> figure(); image(flipdim(G,1)); ylim([700, 1000]);
 ```
 
 
