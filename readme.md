@@ -74,17 +74,18 @@ Once the data is aligned, you can make spectral density images- first go to the 
 >> WAVS = CY_Get_wav;
 ```
 
-then, to get the auditory contours, run:
+then, to get the auditory contours, run the following ( This will take a while...):
 
 ```
->> [consensus,F,T] = CY_Get_Consensus(WAVS);
+>> [consensus,F,T] = CY_Get_Consensus(WAVS); % computer frequency contours for aligned songs.
 ```
 
 To plot the SDI, which is the average of the contour representation of song, run:
 
 ```
->> G = mean(consensus{1},3)
+>> G = mean(consensus{1},3) % the average contour representation of song-i .e. the spectral density image
 >> figure(); image(flipdim(G,1)); ylim([700, 1000]);
+
 ```
 
 
