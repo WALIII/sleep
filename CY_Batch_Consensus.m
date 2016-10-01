@@ -7,11 +7,14 @@ function CY_Batch_Consensus()
 %   Updated: 2016/10/201
 %   By: WALIII
 
+% Compute consensus contours, and SDI images for the sleep experiments.
+
+
 % [nblanks formatstring]=fb_progressbar(100);
 % fprintf(1,['Progress:  ' blanks(nblanks)]);
 
 
-% Root is where the script is run... should contain folders that have the 
+% Root is where the script is run... should contain folders that have the
 START_DIR_ROOT = pwd;
 
 [parentdir,~,~]=fileparts(START_DIR_ROOT);
@@ -57,4 +60,4 @@ end
   end
 
 send_text_message('617-529-0762','Verizon', ...
-         'Calculation Complete','FS_BatchJob_Pt01 has completed')
+         'Calculation Complete','Consensus Contours, and SDI images have been computed. )
