@@ -31,7 +31,7 @@ subFolders = files(dirFlags)% Extract only those that are directories.
 
 for i = 1:length(subFolders)
   clear nextDir
-  nextDir = strcat(subFolders(i).name,'/chop_data/mat/n_MANCLUST/wav');
+  nextDir = strcat(subFolders(i).name,'/chop_data/wav/n_MANCLUST/wav');
 
 
     cd(nextDir)
@@ -63,8 +63,8 @@ save('consensus_data','consensus','F','T','AVG','-v7.3') % Save the data
 
 clear mic_data; clear consensus; clear F; clear T; clear AVG;
 cd(START_DIR_ROOT)
+   end
   end
-% end
 
 send_text_message('617-529-0762','Verizon', ...
          'Calculation Complete','FS_BatchJob_Pt01 has completed')
