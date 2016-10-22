@@ -48,7 +48,7 @@ catch
   send_text_message('617-529-0762','Verizon', ...
          'ERROR','Could not perform function')
 end
-    disp(strcat('Processing for day ', subFolders(i).name, 'moving to the next day');
+    disp(strcat('Processing for day ', subFolders(i).name, 'moving to the next day'));
 
       AVG = mean(consensus{1},3); % calculate the SDI, which is the average of the contour representations.
         save('consensus_data','consensus','F','T','AVG','-v7.3') % Save the data
@@ -60,4 +60,4 @@ end
   end
 
 send_text_message('617-529-0762','Verizon', ...
-         'Calculation Complete','Consensus Contours, and SDI images have been computed. )
+         'Calculation Complete','Consensus Contours, and SDI images have been computed.')
