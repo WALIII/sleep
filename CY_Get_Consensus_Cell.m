@@ -1,8 +1,8 @@
 % Get_Consensus
-function [Gconsensus,F,T] = CY_Get_Consensus_Cell(mic_data)
+function [Gconsensus,F,T,Auditory_contour] = CY_Get_Consensus_Cell(mic_data)
 
-
-	[consensus F T]=acontour(mic_data{1},48000);
+[CONSENSUS,F,T,AUDITORY_CONTOUR,
+	[consensus F T,AUDITORY_CONTOUR]=acontour(mic_data{1},48000);
 	% compute sdi, relevant quantities, store
 
 	ntrials=size(mic_data,2);
@@ -12,12 +12,12 @@ function [Gconsensus,F,T] = CY_Get_Consensus_Cell(mic_data)
 
 	parfor j=1:ntrials
 		disp([num2str(j) ' of ' num2str(ntrials)]);
-		[consensus(:,:,j)]=acontour(mic_data{j},48000);
+		[consensus(:,:,j),F,T,AUDITORY_CONTOUR(:,:,j)]=acontour(mic_data{j},48000);
 	end
 
 Gconsensus{1}=consensus;
+Auditory_contour{1} = AUDITORY_CONTOUR;
 %     T{DAY} = t;
 %     F{DAY} = f;
 
 end
-
