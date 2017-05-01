@@ -1,7 +1,14 @@
-function XMASS_song(c_DIR,c_unDIR)
+function XMASS_song(c_DIR,c_unDIR,T,F)
 % compare 2 songs. Normalizing intensities of the inputted images.
 
 
+
+if nargin < 4
+   T = [];
+end
+if nargin < 3
+   F = [];
+end
 
 
 GT2 = mean(c_DIR,3);
@@ -9,14 +16,20 @@ GT1 = mean(c_unDIR,3);
 
 % Scrap XMASS song
 
-
-
+% [optimizer, metric] = imregconfig('multimodal')
+% 
+% optimizer.InitialRadius = 0.009;
+% optimizer.Epsilon = 1.5e-4;
+% optimizer.GrowthFactor = 1.01;
+% optimizer.MaximumIterations = 300;
+% 
+% GT1 = imregister(GT1, GT2, 'affine', optimizer, metric);
 
 % Llim = 0.01;
 % Hlim = 0.1;
 
-Llim = 0.001;
-Hlim = 0.20;
+Llim = 0.2;
+Hlim = 0.50;
 % for i = 1:3;
 %
 %     im(:,:,i) = mat2gray(G1{i}); %sleepless
@@ -59,20 +72,31 @@ RGB1 = imadjust(im1,[Llim Llim Llim; Hlim Hlim Hlim],[]);
 
 figure();
 % subplot(3,1,1);
+try
+image(T,F,flipdim(RGB1,1)); %ylim([700, 1000]);
+
+catch
 image(flipdim(RGB1,1)); %ylim([700, 1000]);
+end
+
 title('baseleine to baseline')
 legend('tit','tat');
 axis off;
 
 % subplot(3,1,2);
-figure();
-imagesc(flipdim((GT2)-(GT1),1)); %ylim([700, 1000]);
-caxis([-50 50])
-colormap(fireice)
-colorbar
-axis off
-title('baseleine to interrupt')
-%
+% figure();
+% imagesc(flipdim((GT2)-(GT1),1)); %ylim([700, 1000]);
+% caxis([-50 50])
+% colormap(fireice)
+% colorbar
+% axis off
+% title('baseleine to interrupt')
+
+
+
+
+
+
 % subplot(3,1,3);
 % image(flipdim(RGB3,1)); ylim([700, 1000]);
 % title('interrupt  to interrupt')
