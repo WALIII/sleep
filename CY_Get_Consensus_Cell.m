@@ -1,7 +1,7 @@
 % Get_Consensus
 function [Gconsensus,F,T,Auditory_contour] = CY_Get_Consensus_Cell(mic_data)
 
-[CONSENSUS,F,T,AUDITORY_CONTOUR,
+
 	[consensus F T,AUDITORY_CONTOUR]=acontour(mic_data{1},48000);
 	% compute sdi, relevant quantities, store
 
