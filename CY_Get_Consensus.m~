@@ -1,5 +1,5 @@
 % Get_Consensus
-function [Gconsensus] = CY_Get_Consensus(mic_data)
+function [Gconsensus,F,T] = CY_Get_Consensus(mic_data)
 
 
 	[consensus]=ccontour(mic_data(:,1),48000);
