@@ -1,6 +1,6 @@
 function mic_data = CY_Get_wav()
 
-wav_listing=dir(fullfile(pwd,'*.wav')); % Get all .wav files in directory, (eventually,  with proper signing.)
+wav_listing=dir(fullfile(pwd,'*.WAV')); % Get all .wav files in directory, (eventually,  with proper signing.)
   wav_listing={wav_listing(:).name};
   filenames=wav_listing;
 

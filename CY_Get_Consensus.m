@@ -1,8 +1,9 @@
 % Get_Consensus
-function [Gconsensus,f,t] = CY_Get_Consensus(mic_data)
+function [Gconsensus,f,t] = CY_Get_Consensus(mic_data,fs)
+FFT_LENGTH = 1024; %1024
+FFT_OVERLAP = 1016;
 
-
-	[consensus,f,t]=ccontour(mic_data(:,1),48000);
+	[consensus,f,t]=ccontour(mic_data(:,1),fs,'fft_length', FFT_LENGTH,'fft_overlap', FFT_OVERLAP);
 	% compute sdi, relevant quantities, store
 
 	ntrials=size(mic_data,2);
@@ -12,7 +13,7 @@ function [Gconsensus,f,t] = CY_Get_Consensus(mic_data)
 
 	parfor j=1:ntrials
 		disp([num2str(j) ' of ' num2str(ntrials)]);
-		[consensus(:,:,j)]=ccontour(mic_data(:,j),48000);
+		[consensus(:,:,j)]=ccontour(mic_data(:,j),fs,'fft_length', FFT_LENGTH,'fft_overlap', FFT_OVERLAP);
 	end
 
 Gconsensus{1}=consensus;
